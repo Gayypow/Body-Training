@@ -16,10 +16,10 @@ const Player = () => {
         playing
         controls={true}
         url={videoUrls[index]}
-        onEnded={() => setIndex(index + 1 !== videoUrls.length ? index + 1 : 0)}
+        onEnded={() => setIndex(index + 1 !== videoUrls.length ? index : 0)}
       />
       <Pagination
-        current={index + 1 !== videoUrls.length ? index : 1}
+        current={index + 1 !== videoUrls.length ? index + 1 : 1}
         onChange={(e) => setIndex(e)}
         style={{ marginTop: "30px" }}
         total={videoUrls.length}
