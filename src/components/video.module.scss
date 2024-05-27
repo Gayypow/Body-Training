@@ -1,0 +1,84 @@
+.cards-container {
+  display: grid;
+  gap: 15px;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr); /* 2 columns on small screens */
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr); /* 4 columns on large screens */
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr); /* 4 columns on large screens */
+  }
+  // @media (min-width: 1380px) {
+  // 	grid-template-columns: repeat(3, 1fr); /* 4 columns on large screens */
+  // }
+  @media (min-width: 1600px) {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+  }
+  @media (min-width: 1700px) {
+    grid-template-columns: repeat(5, 1fr); /* 4 columns on large screens */
+  }
+
+  .card-component {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: 100%;
+    padding: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    @media (max-width: 1200px) {
+      max-width: unset;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      // .secondary-text {
+      // 	// color: #00000073;
+      // }
+    }
+
+    .rows {
+      display: flex;
+      flex-direction: column;
+      .one-row {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+        .left {
+          color: #00000073;
+        }
+
+        .value {
+          max-width: 200px;
+          margin-left: 5px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    .buttons {
+      button {
+        width: unset;
+        height: unset;
+        padding: 0 !important;
+
+        &:hover {
+          background-color: unset !important;
+        }
+      }
+    }
+  }
+}
